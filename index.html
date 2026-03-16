@@ -208,10 +208,10 @@
             <div class="corner corner-bl"></div><div class="corner corner-br"></div>
             <span class="cover-rose">🌹</span>
             <div class="cover-subtitle">✦ The Wedding of ✦</div>
-            <div class="cover-names" id="cover-groom-name">Dede</div>
+            <div class="cover-names" id="cover-groom-name"></div>
             <span class="cover-amp">&amp;</span>
-            <div class="cover-names" id="cover-bride-name">Een</div>
-            <div class="cover-date-preview" id="cover-date-prev">Rabu, 1 April 2026</div>
+            <div class="cover-names" id="cover-bride-name"></div>
+            <div class="cover-date-preview" id="cover-date-prev"></div>
             <span class="cover-divider-ornament">— ✦ ❦ ✦ —</span>
             <button class="open-btn" onclick="openInvitation()">Buka Undangan</button>
         </div>
@@ -241,13 +241,13 @@
         </div>
     </div>
     <div class="hero-names-wrap">
-        <div class="hero-name" id="hero-groom">Muhammad Mahmudin</div>
+        <div class="hero-name" id="hero-groom"></div>
         <span class="hero-amp-lg">&amp;</span>
-        <div class="hero-name bride" id="hero-bride">Een Endriyani</div>
+        <div class="hero-name bride" id="hero-bride"></div>
     </div>
-    <div class="hero-tagline" id="hero-tagline">"Two souls, one eternal bond"</div>
+    <div class="hero-tagline" id="hero-tagline"></div>
     <div class="rose-divider">🌹</div>
-    <div class="hero-date" id="hero-date">Rabu, 1 April 2026</div>
+    <div class="hero-date" id="hero-date"></div>
 </div>
 
 <!-- QUOTE -->
@@ -271,15 +271,15 @@
         <div class="event-card-body">
             <div class="event-item">
                 <div class="event-icon">📅</div>
-                <div class="event-info"><label>Hari &amp; Tanggal</label><p id="akad-date">Rabu, 1 April 2026</p></div>
+                <div class="event-info"><label>Hari &amp; Tanggal</label><p id="akad-date"></p></div>
             </div>
             <div class="event-item">
                 <div class="event-icon">⏰</div>
-                <div class="event-info"><label>Waktu</label><p id="akad-time">08.00 WIB - selesai</p></div>
+                <div class="event-info"><label>Waktu</label><p id="akad-time"></p></div>
             </div>
             <div class="event-item">
                 <div class="event-icon">🕯</div>
-                <div class="event-info"><label>Tempat</label><p id="akad-venue">Kediaman Bpk. Hendik</p><small id="akad-address">Kp. Teluk Haur, Rt/Rw 002/005, Desa Kertajaya, Kec. Pebayuran, Bekasi</small></div>
+                <div class="event-info"><label>Tempat</label><p id="akad-venue"></p><small id="akad-address"></small></div>
             </div>
         </div>
     </div>
@@ -298,15 +298,15 @@
         <div class="event-card-body">
             <div class="event-item">
                 <div class="event-icon">📅</div>
-                <div class="event-info"><label>Hari &amp; Tanggal</label><p id="resepsi-date">Rabu, 1 April 2026</p></div>
+                <div class="event-info"><label>Hari &amp; Tanggal</label><p id="resepsi-date"></p></div>
             </div>
             <div class="event-item">
                 <div class="event-icon">⏰</div>
-                <div class="event-info"><label>Waktu</label><p id="resepsi-time">11.00 — 15.00 WIB</p></div>
+                <div class="event-info"><label>Waktu</label><p id="resepsi-time"></p></div>
             </div>
             <div class="event-item">
                 <div class="event-icon">🌹</div>
-                <div class="event-info"><label>Tempat</label><p id="resepsi-venue">Kediaman Bpk. Hendik</p><small id="resepsi-address">Kp. Teluk Haur, Rt/Rw 002/005, Desa Kertajaya, Kec. Pebayuran, Bekasi</small></div>
+                <div class="event-info"><label>Tempat</label><p id="resepsi-venue"></p><small id="resepsi-address"></small></div>
             </div>
         </div>
     </div>
@@ -413,7 +413,7 @@
 <!-- FOOTER -->
 <footer>
     <span class="footer-rose">🌹</span>
-    <div class="footer-names">Dede &amp; Een</div>
+    <div class="footer-names"></div>
     <p style="margin-top:0.5rem">Jazakumullahu Khairan Katsiran</p>
     <p style="margin-top:0.8rem;font-size:0.55rem;opacity:0.2">— Forever &amp; Always —</p>
 </footer>
@@ -431,27 +431,131 @@
         letter-spacing: 3px;
         color: #ffffff;
         font-style: italic;
-    ">— Design by Agung · 085882618717 —</p>
+    " class="watermark-text">— Design by Agung · 085882618717 —</p>
 </div>
 
 <script>
-var WA_NUMBER = "6288214386599";
-var MUSIC_URL = "https://archive.org/download/isyfa-lana-gothic-metal-version/Isyfa%27%20Lana%20%28Gothic%20Metal%20Version%29.mp3";
-var RESEPSI_DATE = "2026-04-01";
-var GROOM_NAME = "Dede Mahmudin";
-var BRIDE_NAME = "Een Endriyani";
-var RESEPSI_DATE_DISPLAY = "Rabu, 1 April 2026";
+/* ============================================================
+   ✦  KONFIGURASI UNDANGAN — Isi semua data di sini  ✦
+   ============================================================ */
+var CONFIG = {
+    // ── Identitas Pengantin ──────────────────────────────────
+    GROOM_SHORT    : "Dede",                    // Nama pendek pengantin pria (tampil di cover)
+    BRIDE_SHORT    : "Een",                     // Nama pendek pengantin wanita (tampil di cover)
+    GROOM_FULL     : "Dede Mahmudin",           // Nama lengkap pengantin pria
+    BRIDE_FULL     : "Een Endriyani",           // Nama lengkap pengantin wanita
+    TAGLINE        : '"Two souls, one eternal bond"', // Tagline / kutipan pasangan
+
+    // ── Foto Pengantin ───────────────────────────────────────
+    GROOM_PHOTO    : "",                        // URL foto pengantin pria  (kosongkan = ikon default)
+    BRIDE_PHOTO    : "https://i.ibb.co.com/B2W77Dvb/photo-2026-03-16-01-56-48-7617666584458297408.jpg",                        // URL foto pengantin wanita (kosongkan = ikon default)
+
+    // ── Akad Nikah ───────────────────────────────────────────
+    AKAD_DATE      : "Rabu, 1 April 2026",      // Tampilan tanggal akad
+    AKAD_TIME      : "08.00 WIB - selesai",     // Waktu akad
+    AKAD_VENUE     : "Kediaman Bpk. Hendik",    // Nama tempat akad
+    AKAD_ADDRESS   : "Kp. Teluk Haur, Rt/Rw 002/005, Desa Kertajaya, Kec. Pebayuran, Bekasi",
+
+    // ── Resepsi ──────────────────────────────────────────────
+    RESEPSI_DATE_ISO     : "2026-04-01",        // Format ISO untuk countdown (YYYY-MM-DD)
+    RESEPSI_DATE_DISPLAY : "Rabu, 1 April 2026",// Tampilan tanggal resepsi
+    RESEPSI_TIME         : "11.00 — 15.00 WIB", // Waktu resepsi
+    RESEPSI_VENUE        : "Kediaman Bpk. Hendik",
+    RESEPSI_ADDRESS      : "Kp. Teluk Haur, Rt/Rw 002/005, Desa Kertajaya, Kec. Pebayuran, Bekasi",
+    RESEPSI_HOUR_START   : 11,                  // Jam mulai resepsi (untuk countdown)
+
+    // ── Lokasi / Maps ────────────────────────────────────────
+    MAPS_URL       : "https://www.google.com/maps?q=-6.1816213,107.2830365&z=17&hl=en",
+
+    // ── Hadiah / Rekening Bank ───────────────────────────────
+    BANK_NAME      : "BCA",                     // Nama bank
+    BANK_NO        : "3432562465",              // Nomor rekening
+    BANK_HOLDER    : "Muhammad Mahmudin",       // Atas nama
+    QRIS_IMG       : "https://i.ibb.co.com/FLCDqJD3/photo-2026-03-16-01-39-45-7617662362505445508.jpg",                        // URL gambar QRIS dari imgbb (kosongkan = tidak tampil)
+
+    // ── RSVP & WhatsApp ──────────────────────────────────────
+    WA_NUMBER      : "6288214386599",           // Nomor WA tujuan RSVP (format: 62xxx)
+
+    // ── Musik Latar ──────────────────────────────────────────
+    MUSIC_URL      : "https://archive.org/download/isyfa-lana-gothic-metal-version/Isyfa%27%20Lana%20%28Gothic%20Metal%20Version%29.mp3",
+
+    // ── Watermark ────────────────────────────────────────────
+    WATERMARK      : "— Design by Agung · 085882618717 —",
+
+    // ── Galeri Foto ──────────────────────────────────────────
+    // Tambahkan URL foto di sini, kosongkan array = tampil placeholder
+    GALLERY        : [
+        // "https://i.ibb.co.com/xKrCnDp2/photo-2026-03-16-01-40-45-7617662448404791368.jpg",
+        // "https://i.ibb.co.com/4RL60ywy/photo-2026-03-16-01-40-12-7617662323850739796.jpg",
+    ],
+};
+/* ============================================================
+   ✦  Selesai — Jangan ubah kode di bawah ini  ✦
+   ============================================================ */
+
+// Alias singkat agar kode lama tetap jalan
+var WA_NUMBER           = CONFIG.WA_NUMBER;
+var MUSIC_URL           = CONFIG.MUSIC_URL;
+var RESEPSI_DATE        = CONFIG.RESEPSI_DATE_ISO;
+var GROOM_NAME          = CONFIG.GROOM_FULL;
+var BRIDE_NAME          = CONFIG.BRIDE_FULL;
+var RESEPSI_DATE_DISPLAY = CONFIG.RESEPSI_DATE_DISPLAY;
+
+// Terapkan config ke elemen HTML
+document.getElementById("cover-groom-name").textContent  = CONFIG.GROOM_SHORT;
+document.getElementById("cover-bride-name").textContent  = CONFIG.BRIDE_SHORT;
+document.getElementById("cover-date-prev").textContent   = CONFIG.RESEPSI_DATE_DISPLAY;
+document.getElementById("hero-groom").textContent        = CONFIG.GROOM_FULL;
+document.getElementById("hero-bride").textContent        = CONFIG.BRIDE_FULL;
+document.getElementById("hero-tagline").textContent      = CONFIG.TAGLINE;
+document.getElementById("hero-date").textContent         = CONFIG.RESEPSI_DATE_DISPLAY;
+document.getElementById("akad-date").textContent         = CONFIG.AKAD_DATE;
+document.getElementById("akad-time").textContent         = CONFIG.AKAD_TIME;
+document.getElementById("akad-venue").textContent        = CONFIG.AKAD_VENUE;
+document.getElementById("akad-address").textContent      = CONFIG.AKAD_ADDRESS;
+document.getElementById("resepsi-date").textContent      = CONFIG.RESEPSI_DATE_DISPLAY;
+document.getElementById("resepsi-time").textContent      = CONFIG.RESEPSI_TIME;
+document.getElementById("resepsi-venue").textContent     = CONFIG.RESEPSI_VENUE;
+document.getElementById("resepsi-address").textContent   = CONFIG.RESEPSI_ADDRESS;
+document.getElementById("maps-link").href                = CONFIG.MAPS_URL;
+document.querySelector(".footer-names").textContent      = CONFIG.GROOM_SHORT + " & " + CONFIG.BRIDE_SHORT;
+if (CONFIG.GROOM_PHOTO) document.getElementById("groom-photo").src = CONFIG.GROOM_PHOTO;
+if (CONFIG.BRIDE_PHOTO) document.getElementById("bride-photo").src = CONFIG.BRIDE_PHOTO;
+
+// Watermark
+(function() {
+    var wm = document.querySelector(".watermark-text");
+    if (wm) wm.textContent = CONFIG.WATERMARK;
+})();
 
 // Bank info
 document.getElementById('bank-info').innerHTML =
+    (CONFIG.QRIS_IMG ? '<div class="qris-frame" style="display:block;text-align:center;margin:1.5rem auto 0.5rem"><img src="' + CONFIG.QRIS_IMG + '" alt="QRIS" style="width:190px;height:190px;object-fit:contain;display:block;margin:0 auto"><p style="font-family:\'IM Fell English\',serif;font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:#B8860B;margin-top:0.6rem;opacity:0.8">✦ Scan QRIS ✦</p></div>' : '') +
     '<div class="bank-box">' +
-    '<div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">BCA</span></div>' +
-    '<div class="bank-row"><span class="bank-label">No. Rekening</span><span class="bank-val" onclick="copyRek(this)">3432562465 \uD83D\uDCCB</span></div>' +
-    '<div class="bank-row"><span class="bank-label">Atas Nama</span><span class="bank-val">Muhammad Mahmudin</span></div>' +
+    '<div class="bank-row"><span class="bank-label">Bank</span><span class="bank-val">' + CONFIG.BANK_NAME + '</span></div>' +
+    '<div class="bank-row"><span class="bank-label">No. Rekening</span><span class="bank-val" onclick="copyRek(this)">' + CONFIG.BANK_NO + ' \uD83D\uDCCB</span></div>' +
+    '<div class="bank-row"><span class="bank-label">Atas Nama</span><span class="bank-val">' + CONFIG.BANK_HOLDER + '</span></div>' +
     '</div>';
 
+// Galeri dari config
+(function() {
+    var grid = document.getElementById("gallery-grid");
+    if (!CONFIG.GALLERY || CONFIG.GALLERY.length === 0) return; // biarkan placeholder
+    grid.innerHTML = "";
+    CONFIG.GALLERY.forEach(function(url, i) {
+        var div = document.createElement("div");
+        div.className = "gallery-item" + (i === 0 ? " gallery-item-wide" : "");
+        if (i === 0) div.style.gridColumn = "span 2";
+        div.onclick = function(){ openModal(url); };
+        var img = document.createElement("img");
+        img.src = url; img.alt = "Foto " + (i+1);
+        div.appendChild(img);
+        grid.appendChild(div);
+    });
+})();
+
 function copyRek(el) {
-    var num = "1234567890";
+    var num = CONFIG.BANK_NO;
     if (navigator.clipboard) {
         navigator.clipboard.writeText(num).then(function() {
             var o = el.innerHTML; el.innerHTML = num + " \u2705";
@@ -464,7 +568,7 @@ function copyRek(el) {
 
 // Countdown
 function countdown() {
-    var diff = new Date(RESEPSI_DATE + "T11:00:00").getTime() - Date.now();
+    var diff = new Date(CONFIG.RESEPSI_DATE_ISO + "T" + String(CONFIG.RESEPSI_HOUR_START).padStart(2,"0") + ":00:00").getTime() - Date.now();
     if (diff < 0) {
         ["cd-days","cd-hours","cd-mins","cd-secs"].forEach(function(id){ document.getElementById(id).textContent = "00"; });
         return;
